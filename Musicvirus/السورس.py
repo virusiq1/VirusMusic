@@ -17,7 +17,6 @@ TIME_DURATION_UNITS = (
     ("الثانيه", 1),
 )
 
-
 async def _human_time_duration(seconds):
     if seconds == 0:
         return "inf"
@@ -63,6 +62,7 @@ async def restart(client, m: Message):
 
 
 @Client.on_message(filters.command(["الاوامر"], prefixes=f"{HNDLR}"))
+
 async def help(client, m: Message):
     await m.delete()
     VIRM = f"""
@@ -83,7 +83,7 @@ async def help(client, m: Message):
 ———————×———————
 ⧉ | لأعاده تشغيل التنصيب أرسل ⇦  [ `{HNDLR}ريستارت` ]
 ———————×———————
-المطور 💻 : @v_vviv
+المطورين 💻 : @v_vviv & @JF_61
 القناة 🎈 : @vrvv_v
 """
     await m.reply(VIRM)
