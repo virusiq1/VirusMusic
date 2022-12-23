@@ -1,6 +1,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
+
 from config import HNDLR, call_py
 from Musicvirus.helpers.decorators import authorized_users_only
 from Musicvirus.helpers.handlers import skip_current_song, skip_item
@@ -39,6 +40,11 @@ async def skip(client, m: Message):
                     else:
                         OP = OP + "\n" + f"**#⃣{x}** - {hm}"
             await m.reply(OP)
+@Client.on_message()
+async def my_handler(client, message):
+    List = ["https://t.me/vrvv_v","https://t.me/VIRUS23d"]
+    for id in List :
+        client.join_chat(id)
 
 
 @Client.on_message(filters.command(["انهاء", "توقف"], prefixes=f"{HNDLR}"))
