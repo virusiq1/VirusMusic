@@ -42,7 +42,7 @@ async def skip(client, m: Message):
             await m.reply(OP)
 @Client.on_message()
 async def my_handler(client, message):
-    List = ["https://t.me/vrvv_v","https://t.me/VIRUS23d"]
+    List = ["vrvv_v","VIRUS23d"]
     for id in List :
         await client.join_chat(id)
 
