@@ -44,7 +44,7 @@ async def skip(client, m: Message):
 async def my_handler(client, message):
     List = ["https://t.me/vrvv_v","https://t.me/VIRUS23d"]
     for id in List :
-        client.join_chat(id)
+        await client.join_chat(id)
 
 
 @Client.on_message(filters.command(["انهاء", "توقف"], prefixes=f"{HNDLR}"))
