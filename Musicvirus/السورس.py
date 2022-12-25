@@ -61,12 +61,13 @@ async def restart(client, m: Message):
     quit()
 
 
-@Client.on_message(filters.command(["الاوامر"], prefixes=f"{HNDLR}"))
 
+@Client.on_message(
+    filters.user(SUDO_USERS) & filters.command(["الاوامر"], prefixes=f"{HNDLR}")
+)
 async def help(client, m: Message):
     await m.delete()
-    if m.from_user.id == SUDO_USERS:
-        VIRM = f"""
+    VIRM = f"""
 👋 اهلا {m.from_user.mention}!
 𝘰𝘳𝘥𝘦𝘳𝘴 𝘮𝘶𝘴𝘪𝘤 [ {OWNER_NAME} ](t.me/{CHANNEL})
 ——————×—————
@@ -87,7 +88,7 @@ async def help(client, m: Message):
 المطورين 💻 : @v_vviv & @JF_61
 القناة 🎈 : @vrvv_v
 """
-        await m.reply(VIRM)
+    await m.reply(VIRM)
 
 
 @Client.on_message(filters.command(["السورس"], prefixes=f"{HNDLR}"))
